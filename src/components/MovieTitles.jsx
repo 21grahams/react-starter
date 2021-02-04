@@ -2,7 +2,7 @@ import React from 'react';
 
 var MovieTitles = (props) => (
   <div>
-    <h1>{props.movieTitle}</h1>
+    <h3>{props.movieTitle}</h3>
   </div>
 );
 
