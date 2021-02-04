@@ -17,7 +17,7 @@ class App extends React.Component {
         {title: 'Ex Machina'},
       ],
 
-      filteredResults: [],
+      // filteredResults: [],
 
       searchTerm: ''
     }
@@ -31,17 +31,22 @@ class App extends React.Component {
 
   buttonSearchClick(event) {
     event.preventDefault();
-    const currentMovie = this.state.movies.filter(currentMovie =>
-       currentMovie.title.toLowerCase() == this.state.searchTerm.toLowerCase()
-    )
-    console.log(currentMovie, 'currentMovie')
-      this.setState({
-        movies: currentMovie,
+
+    const currentMovie = this.state.movies.filter((movie, i) => {
+      return movie.title.toLowerCase().includes(this.state.searchTerm.toLowerCase())
     })
+    if (currentMovie.length > 0) {
+      this.setState({
+        movies: currentMovie
+      })
+     } else {
+      this.setState({
+        movies : [{title: 'No movies by this name. Please try again'}]
+      })
+    }
   }
 
   render() {
-    console.log('AFTER RENDER: ', this.state.filteredResults);
     return (
       <div>
 
