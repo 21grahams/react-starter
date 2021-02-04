@@ -16,39 +16,50 @@ class App extends React.Component {
         {title: 'Sunshine'},
         {title: 'Ex Machina'},
       ],
-      title: ''
+
+      filteredResults: [],
+
+      searchTerm: ''
     }
     this.handleChange = this.handleChange.bind(this);
+    this.buttonSearchClick = this.buttonSearchClick.bind(this);
   }
 
   handleChange(event) {
-    this.setState({title: event.target.value})
+    this.setState({searchTerm: event.target.value})
   }
 
-  buttonSearchClick() {
+  buttonSearchClick(event) {
     event.preventDefault();
-    console.log(this.event.target.value);
+    const currentMovie = this.state.movies.filter(currentMovie =>
+       currentMovie.title.toLowerCase() == this.state.searchTerm.toLowerCase()
+    )
+    console.log(currentMovie, 'currentMovie')
+      this.setState({
+        movies: currentMovie,
+    })
   }
 
   render() {
+    console.log('AFTER RENDER: ', this.state.filteredResults);
     return (
       <div>
 
-      <label>
-        <input
-          className='search'
-          type='text'
-          value={this.state.value}
-          onChange={this.handleChange}
-          placeholder='Search Movies...'>
-        </input>
-        <input
-          className='button'
-          type='submit'
-          onClick={() => this.buttonSearchClick()}
-          value='Go!'>
-        </input>
-      </label>
+        <form
+          onSubmit={this.buttonSearchClick}>
+          <input
+            className='search'
+            type='text'
+            value={this.state.value}
+            onChange={this.handleChange}
+            placeholder='Search Movies...'>
+          </input>
+          <input
+            className='button'
+            type='submit'
+            value='Go!'>
+          </input>
+        </form>
 
       <MoviesList movies={this.state.movies}/>
 
