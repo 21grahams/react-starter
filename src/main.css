@@ -1,20 +1,41 @@
-.button {
-  color: yellow;
+.addMovieForm {
+  height: 25px;
+  width: 200px;
+  border-radius: 5px;
+  margin: 2px;
+  margin-bottom: 50px;
+}
+
+.addMovieButton {
+  color: white;
+  background-color: green;
+  font-weight: bold;
+  border-radius: 5px;
+  height: 30px;
+  width: 50px;
+  margin: 2px;
+}
+
+.searchForm {
+  height: 25px;
+  width: 200px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.searchButton {
+  color: white;
   background-color: blue;
   font-weight: bold;
   border-radius: 5px;
   height: 30px;
   width: 50px;
-}
-
-.search {
-  height: 25px;
-  width: 200px;
-  border-radius: 5px;
+  margin: 2px;
 }
 
 h3 {
-  color: rebeccapurple;
+  color: black;
+  box-shadow: 5px 10px;
   text-align: center;
   border-style: solid;
   border-width: thin;

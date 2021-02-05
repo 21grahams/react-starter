@@ -1,7 +1,10 @@
 import React from 'react';
 import MoviesList from './MoviesList.jsx'
 import '../main.css'
-// import Search from './Search.jsx'
+import Search from './Search.jsx'
+import AddMovies from './AddMovies.jsx'
+
+
 
 class App extends React.Component {
   constructor(props) {
@@ -9,27 +12,22 @@ class App extends React.Component {
 
     this.state = {
 
-      movies: [
-        {title: 'Mean Girls'},
-        {title: 'Hackers'},
-        {title: 'The Grey'},
-        {title: 'Sunshine'},
-        {title: 'Ex Machina'},
-      ],
-
-      // filteredResults: [],
-
+      movies: [],
       searchTerm: ''
     }
+
     this.handleChange = this.handleChange.bind(this);
-    this.buttonSearchClick = this.buttonSearchClick.bind(this);
+    this.handleSearchClick = this.handleSearchClick.bind(this);
+    this.addMovies = this.addMovies.bind(this);
   }
+
 
   handleChange(event) {
     this.setState({searchTerm: event.target.value})
   }
 
-  buttonSearchClick(event) {
+
+  handleSearchClick(event) {
     event.preventDefault();
 
     const currentMovie = this.state.movies.filter((movie, i) => {
@@ -46,26 +44,37 @@ class App extends React.Component {
     }
   }
 
+  addMovies(newObj) {
+
+    var newFilms = this.state.movies.slice();
+    newFilms.push(newObj);
+    this.setState({ movies : newFilms})
+  }
+
+
   render() {
     return (
+
       <div>
 
         <form
-          onSubmit={this.buttonSearchClick}>
+          onSubmit={this.handleSearchClick}>
           <input
-            className='search'
+            className='searchForm'
             type='text'
-            value={this.state.value}
+            value={this.state.searchTerm}
             onChange={this.handleChange}
             placeholder='Search Movies...'>
           </input>
+
           <input
-            className='button'
+            className='searchButton'
             type='submit'
             value='Go!'>
           </input>
         </form>
 
+      <AddMovies addMovies={this.addMovies}/>
       <MoviesList movies={this.state.movies}/>
 
     </div>

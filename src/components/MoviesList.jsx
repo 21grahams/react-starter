@@ -7,7 +7,7 @@ var MoviesList = (props) => (
 
   <div>
     {props.movies.map((movie, i) => (
-      <MovieTitles movieTitle={movie.title} key={i}/>
+      <MovieTitles movie={movie} key={i}/>
     ))}
   </div>
 );

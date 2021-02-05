@@ -1,8 +1,8 @@
 import React from 'react';
 
-var MovieTitles = (props) => (
+var MovieTitles = ({movie}) => (
   <div>
-    <h3>{props.movieTitle}</h3>
+    <h3>{movie.title}</h3>
   </div>
 );
 
