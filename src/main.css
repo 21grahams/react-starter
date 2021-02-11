@@ -1,3 +1,56 @@
+.goButton {
+  color: white;
+  background-color: blue;
+  font-weight: bold;
+  border-radius: 5px;
+  height: 30px;
+  width: 50px;
+  margin: 2px;
+}
+
+.searchBar {
+  height: 25px;
+  width: 200px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.addBar {
+  height: 25px;
+  width: 200px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.addButton {
+  color: white;
+  background-color: green;
+  font-weight: bold;
+  border-radius: 5px;
+  height: 30px;
+  width: 50px;
+  margin: 2px;
+}
+
+h4 {
+  color: black;
+  box-shadow: 5px 10px;
+  text-align: center;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+  padding: 10px;
+  margin: 5px;
+  height: 25px;
+}
+
+/* .watchedButton {
+  float: right;
+  color: white;
+  font-weight: bold;
+  background-color: green;
+}
+
 .addMovieForm {
   height: 25px;
   width: 200px;
@@ -31,16 +84,5 @@
   height: 30px;
   width: 50px;
   margin: 2px;
-}
+} */
 
-h3 {
-  color: black;
-  box-shadow: 5px 10px;
-  text-align: center;
-  border-style: solid;
-  border-width: thin;
-  border-color: black;
-  padding: 10px;
-  margin: 5px;
-  height: 25px;
-}

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-var MovieTitles = ({movie}) => (
+var movieTitles = ({movieTitle}) => {
+
+  const [hasWatched, toggleWatched] = useState(false)
+
+  return (
   <div>
-    <h3>{movie.title}</h3>
+    <h4>{movieTitle}</h4>
+    <button style={{'background' : hasWatched ? 'green' : 'white'}} onClick={() => toggleWatched(!hasWatched)}>{hasWatched ? 'WATCHED' : 'NOT WATCHED'}</button>
   </div>
-);
+  )};
 
-export default MovieTitles;
+export default movieTitles;
